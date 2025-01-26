@@ -24,12 +24,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Install flake8
+      run: |
+        pip install flake8  # Install flake8 here
+
     - name: Lint with flake8
       run: |
-        flake8 src/ tests/
-
+        flake8 src/ tests/  # Linting step
+  
   train:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
