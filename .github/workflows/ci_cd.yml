@@ -33,6 +33,7 @@ jobs:
         flake8 src/ tests/  # Linting step
   
   train:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
